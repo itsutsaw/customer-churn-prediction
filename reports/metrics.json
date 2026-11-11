@@ -1,0 +1,89 @@
+{
+  "data": {
+    "rows": 7043,
+    "train": 5634,
+    "test": 1409,
+    "churn_rate": 0.2654
+  },
+  "baseline_test_accuracy": 0.7346,
+  "cv_comparison": [
+    {
+      "model": "Logistic Regression",
+      "cv_roc_auc": 0.8458,
+      "cv_roc_auc_std": 0.0115,
+      "cv_f1": 0.6287,
+      "cv_recall": 0.7973,
+      "cv_precision": 0.5192,
+      "best_params": {
+        "C": 10.0
+      }
+    },
+    {
+      "model": "Random Forest",
+      "cv_roc_auc": 0.8474,
+      "cv_roc_auc_std": 0.0103,
+      "cv_f1": 0.6288,
+      "cv_recall": 0.7766,
+      "cv_precision": 0.5284,
+      "best_params": {
+        "max_depth": 10,
+        "min_samples_leaf": 10,
+        "n_estimators": 300
+      }
+    },
+    {
+      "model": "Gradient Boosting",
+      "cv_roc_auc": 0.8477,
+      "cv_roc_auc_std": 0.011,
+      "cv_f1": 0.6336,
+      "cv_recall": 0.8027,
+      "cv_precision": 0.5235,
+      "best_params": {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "max_iter": 200
+      }
+    }
+  ],
+  "selected_model": "Gradient Boosting",
+  "test_at_0.5": {
+    "threshold": 0.5,
+    "accuracy": 0.7459,
+    "precision": 0.5137,
+    "recall": 0.7995,
+    "f1": 0.6255,
+    "roc_auc": 0.8452,
+    "pr_auc": 0.6627
+  },
+  "test_at_tuned_threshold": {
+    "threshold": 0.527,
+    "accuracy": 0.753,
+    "precision": 0.523,
+    "recall": 0.7888,
+    "f1": 0.629,
+    "roc_auc": 0.8452,
+    "pr_auc": 0.6627
+  },
+  "top20_share_of_churners": 0.508,
+  "permutation_importance": {
+    "Contract": 0.0787,
+    "tenure": 0.0741,
+    "InternetService": 0.0085,
+    "OnlineSecurity": 0.0061,
+    "TechSupport": 0.0046,
+    "PaymentMethod": 0.0037,
+    "PaperlessBilling": 0.0025,
+    "MonthlyCharges": 0.0022,
+    "StreamingMovies": 0.0016,
+    "MultipleLines": 0.0014,
+    "TotalCharges": 0.0012,
+    "SeniorCitizen": 0.0007,
+    "Dependents": 0.0001,
+    "StreamingTV": 0.0001,
+    "DeviceProtection": 0.0001,
+    "PhoneService": 0.0,
+    "Partner": 0.0,
+    "OnlineBackup": -0.0001,
+    "gender": -0.0001
+  }
+}
